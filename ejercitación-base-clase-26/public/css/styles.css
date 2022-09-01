@@ -1,0 +1,24 @@
+.titulo-principal{
+    color: royalblue;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mensajeError {
+    color: red;
+}
+
+.userColor-rojo {
+    background-color: red;
+}
+
+.userColor-azul {
+    background-color: blue;
+}
+.userColor-amarillo {
+    background-color: yellow;
+}
+.userColor-verde {
+    background-color: green;
+}
+

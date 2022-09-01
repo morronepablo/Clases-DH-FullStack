@@ -1,0 +1,30 @@
+[
+ {
+  "titulo": "Repasar JS",
+  "estado": "terminada"
+ },
+ {
+  "titulo": "Armar aplicación de Tareas",
+  "estado": "en progreso"
+ },
+ {
+  "titulo": "Descanso",
+  "estado": "pendiente"
+ },
+ {
+  "titulo": "After clase 6",
+  "estado": "pendiente"
+ },
+ {
+  "titulo": "sistema operativo 2",
+  "estado": "pendiente"
+ },
+ {
+  "titulo": "nueva tarea del curso",
+  "estado": "pendiente"
+ },
+ {
+  "titulo": "Bases de datos mySQL",
+  "estado": "pendiente"
+ }
+]
