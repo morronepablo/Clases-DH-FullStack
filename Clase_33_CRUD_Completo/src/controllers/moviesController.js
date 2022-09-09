@@ -132,6 +132,20 @@ const moviesController = {
             console.log(error);
             res.send(error);
         });
+    },
+    all: async (req, res) => {
+        const movies = await db.Movie.findAll({
+            include: [
+                {
+                    association: 'genre',
+                    attributes: {
+                        exclude: ['created_at', 'updated_at']
+                    }
+                },
+                'actors'
+            ]
+        });
+        res.send(movies);
     }
 }
 
