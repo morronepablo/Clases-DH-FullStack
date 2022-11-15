@@ -5,9 +5,13 @@ window.onload = function(){
 
     //let modo = confirm('Desea modo oscuro');
 
-    logoDH.addEventListener('mouseover', () => {
+    logoDH.addEventListener('mouseleave', () => {
         body.style.backgroundColor = '#7f7f7f'
         body.classList.add('fondoMoviesList');
+        moviesListTitulo.innerHTML = 'LISTADO DE PELÍCULAS';
+        moviesListTitulo.style.color ='white';
+        moviesListTitulo.style.backgroundColor = 'teal';
+        moviesListTitulo.style.padding = '20px';
     })
     // if(modo){
     //     body.style.backgroundColor = '#7f7f7f'
@@ -15,9 +19,5 @@ window.onload = function(){
     // }
     
     console.log(body);
-    moviesListTitulo.innerHTML = 'LISTADO DE PELÍCULAS';
-    moviesListTitulo.style.color ='white';
-    moviesListTitulo.style.backgroundColor = 'teal';
-    moviesListTitulo.style.padding = '20px';
-
+    
 }

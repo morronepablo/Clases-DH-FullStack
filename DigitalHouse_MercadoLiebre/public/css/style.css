@@ -18,7 +18,7 @@ html {
 
 header {
     display: flex;
-    /* border: 3px solid green; */
+    border: 3px solid green;
     background-color: var(--amarillo);
     flex-direction: column;
 }
@@ -27,50 +27,50 @@ header {
 
 /**LOGO BARRA LUPA PAGO TARJETA */
 .logo-container {
-    /* border: 3px solid red; */
+    border: 3px solid red;
     display: flex;
     flex-direction: column;
 }
 
 /**MENU HAMBURGUEZA */
 .burger-container {
-    /* border: 3px solid red; */
+    border: 3px solid red;
     display: flex;
     justify-content: center;
 }
 
 /**MENU NAVEGACION */
 .menu-container {
-    /* border: 3px solid red; */
+    border: 3px solid red;
     display: none;
 }
 
 .logo-bar-container {
-    /* border: 3px solid gray; */
+    border: 3px solid gray;
     display: flex;
 }
 
 .card-container {
-    /* border: 3px solid gray; */
+    border: 3px solid gray;
     padding: 15px;
 }
 
 .logo {
-    /* border: 3px solid pink; */
+    border: 3px solid pink;
     width: 50%;
     padding: 10px;
 }
 
 .search-button-container {
     display: flex;
-    /* border: 3px solid pink; */
+    border: 3px solid pink;
     width: 50%;
     justify-content: center;
     align-items: center;
 }
 
 .search-container {
-    /* border: 3px solid brown;  */
+    border: 3px solid brown; 
     display: flex;
     height: 25px;
     width: 90%;

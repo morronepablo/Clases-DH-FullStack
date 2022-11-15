@@ -12,12 +12,13 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 // Rutas
 // Acá falta el archivo de rutas y después las vistas de EJS
 app.use('/', mainRouter);
 
-app.listen(3000, () => { console.log('Servidor arriba en el puerto 3000 🤓👌');})
+const port = process.env.PORT || 3000;
+app.listen(port, () => { console.log(`Servidor corriendo en http://localhost:${port} 🤓👌`);})

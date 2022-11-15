@@ -2,14 +2,6 @@ var autos = require('./autos.js');/* requerir módulo autos */
 
 const concesionaria = {
     autos: autos,
-    // buscarAuto: function (patente) {
-    //     const busqueda = autos.find(auto => auto.patente == patente);
-    //     if(busqueda != null) {
-    //         return busqueda;
-    //     } else {
-    //         return null;
-    //     }
-    // },
     buscarAuto: function (patente) {
         const auto = autos.find(function(auto) {
             if(auto.patente == patente) {
@@ -23,12 +15,6 @@ const concesionaria = {
         }
     },
     venderAuto: function (patente) {
-        // busqueda = this.autos.map(function(dato) {
-        //     if(dato.patente == patente){
-        //         dato.vendido = true;
-        //     }
-        //     return dato;
-        // })
         const auto = this.buscarAuto(patente);
         if(auto != null) {
             auto.vendido = true;
@@ -36,8 +22,6 @@ const concesionaria = {
         return auto;
     },
     autosParaLaVenta: function () {
-        // filtrado = autos.filter((pirulo) => pirulo.vendido == false);
-        // return filtrado;
         const autoVenta = autos.filter(function(auto) {
             if(auto.vendido == false){
                 return true

@@ -1,3 +1,124 @@
+//Otra forma de validar el formulario - MSc. Ángel Daniel Fuentes
+// window.onload = function () {
+//     let titulo = document.querySelector('.moviesAddTitulo')
+//     let formulario = document.querySelector('#formulario');
+//     let article = document.querySelector('article');
+//     titulo.innerHTML = 'AGREGAR PELÍCULA';
+//     titulo.classList.add('titulo');
+//     article.classList.add('fondoTransparente');
+//     formulario.classList.add('fondoCRUD');
+
+//     //Desde aqui incio la validación del formulario
+//     //Capturo el formulario
+//     let form = document.querySelector('.form');
+//     //Posiciono al usuario dentro del campo Titulo
+//     form.title.focus();
+//     //Capturo todos los inputs del formulario
+//     const inputs = document.querySelectorAll('#formulario input');
+
+//     //Aquí hago que todos los campos sean falsos, para controlar cuando todo este validado, ya que de ser así, todos los campos serian true
+//     const campos = {
+//         title: false,
+//         rating: false,
+//         awards: false,
+//         release_date: false,
+//         length: false,
+//     }
+//     //Esta es la función reponsable de determinar que campo se va a validar y de esa forma se invola  a la funcipon encargada de efectuar dicha validación, se le pasa como parámetros el input y el nombre del campo
+//     const validarFormulario = (e) => {
+//         switch (e.target.name) {
+//             case "title":
+//                 validarTitle(e.target, 'title');
+//                 break;
+//             case "rating":
+//                 validarRating(e.target, 'rating');
+//                 break;
+//             case "awards":
+//                 validarAwards(e.target, 'awards');
+//                 break;
+//             case "release_date":
+//                 validarReleaseDate(e.target, 'release_date');
+//                 break;
+//             case "length":
+//                 validarLength(e.target, 'length');
+//                 break;
+//             case "genre_id":
+//                 validarGenre(e.target, 'genre_id');
+//                 break;
+//         }
+//     }
+//     //Aquí es donde desarrollo cada una de las funciones que realizarían las validaciones
+//     //Función que ejecuta las validaciones del titulo
+//     const validarTitle = (input, campo) => {
+//         if (title.value === '') {
+//             document.getElementById('formulario__mensaje').innerHTML = '';
+//             let errorTitle = document.getElementById('errorTitle')
+//             errorTitle.innerHTML = `El campo ${campo} no puede estar vacío`;
+//             errorTitle.style.color = 'red';
+//             title.classList.add('is-invalid');
+//             campos[campo] = false;
+//         } else if (title.value.length < 4) {
+//             document.getElementById('formulario__mensaje').innerHTML = '';
+//             let errorTitle = document.getElementById('errorTitle')
+//             errorTitle.innerHTML = `El campo ${campo} no puede poseer menos de 4 caracteres`;
+//             errorTitle.style.color = 'red';
+//             title.classList.add('is-invalid');
+//             campos[campo] = false;
+//         } else {
+//             errorTitle.innerHTML = '';
+//             title.classList.add('is-valid');
+//             title.classList.remove('is-invalid');
+//             //form.rating.focus();
+//             campos[campo] = true;
+//             console.log(campos.campo);
+//         };
+//     }
+//     //Función que valida el rating 
+//     const validarRating = (input, campo) => {
+//         if (rating.value <= 0 || rating.value > 10) {
+//             document.getElementById('formulario__mensaje').innerHTML = '';
+//             let errorRating = document.getElementById('errorRating')
+//             errorRating.innerHTML = `El campo ${campo} no puede ser menor a 0 ni mayor a 10`;
+//             errorRating.style.color = 'red';
+//             rating.classList.add('is-invalid');
+//             campos[campo] = false;
+//         } else {
+//             errorRating.innerHTML = '';
+//             rating.classList.add('is-valid');
+//             rating.classList.remove('is-invalid');
+//             //form.rating.focus();
+//             campos[campo] = true;
+//         };
+//     }
+
+//     //Aquí ejecuto un foreach con la intencipon de llamar a la función que valida los campos del formulario, el llamado se ejecutará cada vez que el usuario levanta una tecla o intente dejar el campo
+//     inputs.forEach((input) => {
+//         input.addEventListener('keyup', validarFormulario);
+//         input.addEventListener('blur', validarFormulario);
+//     });
+
+//     //esta sección es la que se encarga de validar que realmente todos los campos validados esten correctos y de ser así todos deben estar con el valor boleano true, si todo esta bien aparece un mensaje indicandole al usuario que las validaciones estan correctas y se envia el formulario.
+//     formulario.addEventListener('submit', (e) => {
+//         e.preventDefault();
+
+//         const genre_id = document.getElementById('genre_id');
+
+//         //if (campos.title && campos.rating && campos.awards && campos.release_date && campos.length && genre_id.checked) {*/
+//         console.log(campos.title,campos.rating );
+//         if (campos.title && campos.rating ) {
+
+//             alert('La validación fué exitosa')
+//             //form.reset();
+//             form.submit();
+
+//         } else {
+//             document.getElementById('formulario__mensaje').innerHTML = "<p style='color:white;background-color:tomato'><strong>Error:</strong> Por favor complete el formulario correctamente. </p>"
+//         }
+//     });
+
+// }
+
+
 window.onload = function(){
     let titulo = document.querySelector('.moviesAddTitulo')
     let formulario = document.querySelector('#formulario');
@@ -6,6 +127,8 @@ window.onload = function(){
     titulo.classList.add('titulo');
     article.classList.add('fondoTransparente');
     formulario.classList.add('fondoCRUD');
+
+    console.log("estoy aqui");
 
 //------DESDE AQUÍ CONTINUE CON LAS VALIDACIONES DEL FORMULARIO -------//    
     let form = document.querySelector('.form');
@@ -98,6 +221,5 @@ window.onload = function(){
         }
 
     });
-
 
 }

@@ -227,12 +227,23 @@ footer .body-pie {
 footer .icon-footer {
     font-size: 2em;
     color: var(--celeste);
+    cursor: pointer;
     transition: all 0.4s ease-in;
 }
 
 footer .icon-footer:hover {
     color: var(--amarillo);
+    /* transform: rotateY(180deg); */
+    transition: all 0.4s ease-in;
+}
+
+footer .icon-footer:hover i {
     transform: rotateY(180deg);
+    transition: all 0.4s ease-in;
+}
+
+footer .icon-footer:not(:hover) i {
+    transform: rotateY(0deg);
     transition: all 0.4s ease-in;
 }
 

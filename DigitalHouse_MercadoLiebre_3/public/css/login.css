@@ -16,7 +16,8 @@ main label {
 }
 
 .register-card-body {
-    margin-bottom: 20px;
+    margin: 0;
+    padding-top: 10px;
 }
 
 .register-card-body p{

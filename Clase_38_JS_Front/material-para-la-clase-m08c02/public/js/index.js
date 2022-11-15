@@ -6,9 +6,6 @@ window.onload = function(){
     let fondo = document.querySelector('body');
     let enlace = document.querySelector('a');
 
-    let logoDH = document.querySelector('.logoDH');
-    let menu = document.querySelector('#menu');
-
     
     let nombre = prompt('Ingrese su nombre');
     console.log(nombre);
@@ -33,13 +30,46 @@ window.onload = function(){
         }
     }
 
-    logoDH.addEventListener('click', () => {
-        menu.classList.toggle('mostrar');
-    })
-    
     menu.addEventListener('mouseout', () => {
         menu.classList.remove('mostrar');
     })
-
+    
     container.style.display = 'block';
+    
+    //Microdesafio 1 a)
+    let logoDH = document.querySelector('.logoDH');
+    let menu = document.getElementById('menu');
+    logoDH.addEventListener('click', () => {
+        menu.classList.toggle('mostrar');
+    })
+    //Microdesafio 2 b)
+    logoDH.addEventListener('mouseleave', () => {
+        menu.classList.toggle('mostrar');
+    })
+    // Trabajando con el circulo
+    let movimiento = 50;
+    let margenIzquierdo = 0;
+
+    let circulo = document.getElementById('circulo');
+    document.addEventListener('keydown', (e) => {
+        let key = e.key;
+        if(key == 'ArrowRight' && margenIzquierdo < 1200) {
+            moverDerecha();
+        }
+        if(key == 'ArrowLeft' && margenIzquierdo > 0) {
+            moverIzquierda();
+        }
+    });
+
+    //funciones que utiliza mi aplicación 
+    function moverDerecha() {
+        margenIzquierdo = margenIzquierdo + movimento;
+        circulo.style.marginLeft = margenIzquierdo+'px'
+    }
+
+    function moverIzquierda(){
+        margenIzquierdo = margenIzquierdo - movimiento;
+        circulo.style.marginLeft = margenIzquierdo+'px';  
+    }
+
 }

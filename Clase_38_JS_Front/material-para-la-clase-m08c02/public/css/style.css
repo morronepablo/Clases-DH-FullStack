@@ -9,6 +9,7 @@ body {
 }
 .container {
   display: none;
+  max-width: 1200px;
 }
 .contenido {
   padding-top: 160px;
@@ -120,4 +121,11 @@ figure {
 .toggle img{
   display: block;
   width: 40px;
+}
+
+/**Aplicando css al circulo */
+.circulo {
+  width: 100px;
+  height: 100px;background-color: red;
+  border-radius: 50%;
 }
