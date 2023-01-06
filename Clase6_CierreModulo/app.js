@@ -1,9 +1,9 @@
-var autos = require('./autos.js');/* requerir módulo autos */
+var autosImportados = require('./autos.js');/* requerir módulo autos */
 
 const concesionaria = {
-    autos: autos,
+    autos: autosImportados,
     buscarAuto: function (patente) {
-        const auto = autos.find(function(auto) {
+        const auto = this.autos.find(function(auto) {
             if(auto.patente == patente) {
                 return auto
             }
@@ -21,15 +21,10 @@ const concesionaria = {
         }
         return auto;
     },
-    autosParaLaVenta: function () {
-        const autoVenta = autos.filter(function(auto) {
-            if(auto.vendido == false){
-                return true
-            }else {
-                return false
-            }
+    autosParaLaVenta: function() {
+        return this.autos.filter(function(auto) {
+            return auto.vendido == false;
         })
-        return autoVenta
     },
     autosNuevos: function () {
         const autosParaVenta = this.autosParaLaVenta()
@@ -37,17 +32,17 @@ const concesionaria = {
         return autosNuevo;
     },
     listaDeVentas: function () {
-        const arrPrecios = [];
-        autos.forEach(auto =>{
-            if(auto.vendido === true){
-                arrPrecios.push(auto.precio)
-            }
+        let vendidos = [];
+        vendidos = this.autos.filter(function(auto) {
+            return auto.vendido == true;
         })
-        return arrPrecios
+        let precios = vendidos.map((auto) => auto.precio);
+        return precios;
     },
     totalDeVentas: function () {
-        const totalVentas = this.listaDeVentas().reduce((acumulador, item) => item + acumulador, 0)
-        return totalVentas
+        const totalVentas = this.listaDeVentas()
+        .reduce((acumulador, precio) => precio + acumulador, 0)
+        return totalVentas;
     },
     puedeComprar: function (auto, persona) {
         if(persona.capacidadDePagoTotal > auto.precio && persona.capacidadDePagoEnCuotas > (auto.precio / auto.cuotas)){
@@ -57,14 +52,8 @@ const concesionaria = {
         }
     },
     autosQuePuedeComprar: function (persona) {
-        const autosParaVenta = this.autosParaLaVenta();
-        let arrPuedeComprar = [];
-        autosParaVenta.forEach(auto => {
-            if(this.puedeComprar(auto, persona)) {
-                arrPuedeComprar.push(auto);
-            }
-        });
-        return arrPuedeComprar;
+        let autosParaLaVenta = this.autosParaLaVenta();
+        return autosParaLaVenta.filter((auto) => this.puedeComprar(auto, persona) === true);
     }
 };
 

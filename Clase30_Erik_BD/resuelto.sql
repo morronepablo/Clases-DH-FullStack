@@ -1,4 +1,7 @@
--- 
+SELECT e.title, a.first_name, a.last_name
+FROM actor_episode-- 
+
+
 SELECT DISTINCT actors.first_name, actors.last_name  
 FROM actors
 INNER JOIN actor_movie ON actor_movie.actor_id = actors.id

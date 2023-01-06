@@ -205,7 +205,7 @@ window.onload = function(){
             genre_id.classList.remove('is-invalid');
         };
         
-        //Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
+        // Aquí controlo que es lo que debo hacer si hay o no errores en el formulario
 
         if (errors.length > 0) {
             e.preventDefault();
